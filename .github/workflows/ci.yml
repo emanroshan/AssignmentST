@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r C:\Users\shams\OneDrive\Desktop\Assignment 3\requirements.txt
-          
+          pip install -r config/requirements.txt
+
       - name: Run unit tests
         run: |
           pytest  # Adjust the test command if necessary
