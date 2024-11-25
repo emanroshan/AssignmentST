@@ -55,7 +55,12 @@ public class LoginApp extends JFrame {
             }
         }
     }
-
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            LoginApp loginApp = new LoginApp();
+            loginApp.setVisible(true);
+        });
+    }
     String authenticateUser(String email, String password) {
         String userName = null;
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
@@ -76,10 +81,5 @@ public class LoginApp extends JFrame {
         return userName;
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            LoginApp loginApp = new LoginApp();
-            loginApp.setVisible(true);
-        });
-    }
+  
 }
